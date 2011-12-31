@@ -383,9 +383,9 @@ btVector3.prototype = {
         btSetMin( this.m_floats[3], other.w() );
     },
     /**
-     * @param {btVector3} x
-     * @param {btVector3} y
-     * @param {btVector3} z
+     * @param {btScalar} x
+     * @param {btScalar} y
+     * @param {btScalar} z
      */
     setValue: function( x, y, z ) {
         this.m_floats[0] = x;

@@ -110,10 +110,10 @@ btQuadWord.prototype = {
      */
     op_eq: function( other ) {
         return (
-            m_floats[3] == other.m_floats[3] && 
-            m_floats[2] == other.m_floats[2] && 
-            m_floats[1] == other.m_floats[1] && 
-            m_floats[0] == other.m_floats[0] );
+            this.m_floats[3] == other.m_floats[3] && 
+            this.m_floats[2] == other.m_floats[2] && 
+            this.m_floats[1] == other.m_floats[1] && 
+            this.m_floats[0] == other.m_floats[0] );
 
     },
     /**
@@ -158,19 +158,19 @@ btQuadWord.prototype = {
      * @param {btQuadWord} other The other btQuadWord to compare with 
      */
     setMax: function( other ) {
-        btSetMax(m_floats[0], other.m_floats[0]);
-        btSetMax(m_floats[1], other.m_floats[1]);
-        btSetMax(m_floats[2], other.m_floats[2]);
-        btSetMax(m_floats[3], other.m_floats[3]);
+        btSetMax( this.m_floats[0], other.m_floats[0]);
+        btSetMax( this.m_floats[1], other.m_floats[1]);
+        btSetMax( this.m_floats[2], other.m_floats[2]);
+        btSetMax( this.m_floats[3], other.m_floats[3]);
     },
     /**
      * @brief Set each element to the min of the current values and the values of another btQuadWord
      * @param {btQuadWord} other The other btQuadWord to compare with 
      */
     setMin: function( other ) {
-        btSetMin(m_floats[0], other.m_floats[0]);
-        btSetMin(m_floats[1], other.m_floats[1]);
-        btSetMin(m_floats[2], other.m_floats[2]);
-        btSetMin(m_floats[3], other.m_floats[3]);
+        btSetMin( this.m_floats[0], other.m_floats[0]);
+        btSetMin( this.m_floats[1], other.m_floats[1]);
+        btSetMin( this.m_floats[2], other.m_floats[2]);
+        btSetMin( this.m_floats[3], other.m_floats[3]);
     }
 };

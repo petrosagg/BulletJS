@@ -1,0 +1,7 @@
+../libs/base.js
+
+LinearMath/btScalar.js
+LinearMath/btMinMax.js
+LinearMath/btVector3.js
+LinearMath/btQuadword.js
+LinearMath/btQuaternion.js

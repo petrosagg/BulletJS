@@ -1,11 +1,12 @@
-/** @typedef {btQuaternion|btQuaternion_a|btQuaternion_b|btQuaternion_c} */var btQuaternion;
+/** @typedef {btQuaternion|btQuaternion_a|btQuaternion_b|btQuaternion_c} */
+var btQuaternion;
 
 /**
  * @brief The btQuaternion implements quaternion to perform linear algebra rotations in combination with btMatrix3x3, btVector3 and btTransform. 
  * @deprecated
  * @constructor
  */
-function btQuaternion() {
+btQuaternion = function btQuaternion() {
     btQuadWord.call( this );
 }
 
@@ -207,9 +208,9 @@ btQuaternion_c.prototype = {
      */
     op_mul: function( s ) {
         return new btQuaternion_a(
-            x() * s, 
-            y() * s, 
-            z() * s, 
+            this.x() * s, 
+            this.y() * s, 
+            this.z() * s, 
             this.m_floats[3] * s );
     },
     /**

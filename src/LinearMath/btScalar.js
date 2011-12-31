@@ -25,6 +25,7 @@ subject to the following restrictions:
 
 /**
  * @return {number}
+ * @export
  */
 function btGetVersion() {
     return BT_BULLET_VERSION;
@@ -37,14 +38,16 @@ var btScalar;
 /**
  * @param {number} x
  * @return {number}
+ * @export
  */
-function btScalar( x ) {
+btScalar = function btScalar( x ) {
     return x;
 }
 
 /**
  * @param {btScalar} y
  * @return {btScalar}
+ * @export
  */
 function btSqrt( y ) {
     return Math.sqrt( y );
@@ -53,6 +56,7 @@ function btSqrt( y ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btFabs( x ) { 
     return Math.abs( x ); 
@@ -61,6 +65,7 @@ function btFabs( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btCos( x ) { 
     return Math.cos( x ); 
@@ -69,6 +74,7 @@ function btCos( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btSin( x ) { 
     return Math.sin( x );
@@ -77,6 +83,7 @@ function btSin( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btTan( x ) { 
     return Math.tan( x ); 
@@ -85,6 +92,7 @@ function btTan( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btAcos( x ) {
     if ( x < btScalar( -1 ) ) {
@@ -99,6 +107,7 @@ function btAcos( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btAsin( x ) {
     if ( x < btScalar( -1 ) ) {
@@ -113,6 +122,7 @@ function btAsin( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btAtan( x ) { 
     return Math.atan( x );
@@ -122,6 +132,7 @@ function btAtan( x ) {
  * @param {btScalar} x
  * @param {btScalar} y
  * @return {btScalar}
+ * @export
  */
 function btAtan2( x, y ) { 
     return Math.atan2( x, y );
@@ -130,6 +141,7 @@ function btAtan2( x, y ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btExp( x ) { 
     return Math.exp( x ); 
@@ -138,6 +150,7 @@ function btExp( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btLog( x ) { 
     return Math.log( x ); 
@@ -147,6 +160,7 @@ function btLog( x ) {
  * @param {btScalar} x
  * @param {btScalar} y
  * @return {btScalar}
+ * @export
  */
 function btPow( x, y ) { 
     return Math.pow( x, y ); 
@@ -156,6 +170,7 @@ function btPow( x, y ) {
  * @param {btScalar} x
  * @param {btScalar} y
  * @return {btScalar}
+ * @export
  */
 function btFmod( x, y ) { 
     return x % y;
@@ -165,6 +180,7 @@ function btFmod( x, y ) {
  * @param {btScalar} y
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btAtan2Fast( y, x ) {
     var coeff_1 = SIMD_PI / 4.0;
@@ -185,6 +201,7 @@ function btAtan2Fast( y, x ) {
 /**
  * @param {btScalar} x
  * @return {boolean}
+ * @export
  */
 function btFuzzyZero( x ) { 
     return btFabs( x ) < SIMD_EPSILON; 
@@ -194,6 +211,7 @@ function btFuzzyZero( x ) {
  * @param {btScalar} a
  * @param {btScalar} eps
  * @return {boolean}
+ * @export
  */
 function btEqual( a, eps ) {
     return ( a <= eps ) && ( a >= -eps );
@@ -203,6 +221,7 @@ function btEqual( a, eps ) {
  * @param {btScalar} a
  * @param {btScalar} eps
  * @return {boolean}
+ * @export
  */
 function btGreaterEqual( a, eps ) {
     return a > eps;
@@ -211,6 +230,7 @@ function btGreaterEqual( a, eps ) {
 /**
  * @param {btScalar} x
  * @return {number}
+ * @export
  */
 function btIsNegative( x ) {
     return x < 0 ? 1 : 0;
@@ -219,6 +239,7 @@ function btIsNegative( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btRadians( x ) { 
     return x * SIMD_RADS_PER_DEG;
@@ -227,6 +248,7 @@ function btRadians( x ) {
 /**
  * @param {btScalar} x
  * @return {btScalar}
+ * @export
  */
 function btDegrees( x ) { 
     return x * SIMD_DEGS_PER_RAD; 
@@ -237,6 +259,7 @@ function btDegrees( x ) {
  * @param {btScalar} b
  * @param {btScalar} c
  * @return {btScalar}
+ * @export
  */
 function btFsel( a, b, c ) {
     return a >= 0 ? b : c;
@@ -244,6 +267,7 @@ function btFsel( a, b, c ) {
 
 /**
  * @return {boolean}
+ * @export
  */
 function btMachineIsLittleEndian() {
     var i = new Int32Array( [ 1 ] );
@@ -258,6 +282,7 @@ function btMachineIsLittleEndian() {
 
 /**
  * @deprecated
+ * @export
  */
 function btSelect() {
 }
@@ -269,6 +294,7 @@ function btSelect() {
  * @param {number} valueIfConditionNonZero
  * @param {number} valueIfConditionZero
  * @return {number}
+ * @export
  */
 function btSelect_a( condition, valueIfConditionNonZero, valueIfConditionZero ) {
     // Set testNz to 0xFFFFFFFF if condition is nonzero, 0x00000000 if condition is zero
@@ -287,6 +313,7 @@ function btSelect_a( condition, valueIfConditionNonZero, valueIfConditionZero ) 
  * @param {number} valueIfConditionNonZero
  * @param {number} valueIfConditionZero
  * @return {number}
+ * @export
  */
 function btSelect_b( condition, valueIfConditionNonZero, valueIfConditionZero ) {
     return ( condition !== 0 ) ? valueIfConditionNonZero : valueIfConditionZero;
@@ -294,6 +321,7 @@ function btSelect_b( condition, valueIfConditionNonZero, valueIfConditionZero ) 
 
 /**
  * @deprecated
+ * @export
  */
 function btSwap() {
 }
@@ -306,6 +334,7 @@ function btSwap() {
 
 /**
  * @deprecated
+ * @export
  */
 function btSwapEndian() {
 }
@@ -314,6 +343,7 @@ function btSwapEndian() {
 /**
  * @param {number} val
  * @return {number}
+ * @export
  */
 function btSwapEndian_a( val ) {
     return ( ( ( val & 0xff000000 ) >> 24 ) | ( ( val & 0x00ff0000 ) >> 8 ) | ( ( val & 0x0000ff00 ) << 8 ) | ( ( val & 0x000000ff ) << 24 ) );
@@ -322,6 +352,7 @@ function btSwapEndian_a( val ) {
 /**
  * @param {number} val
  * @return {number}
+ * @export
  */
 function btSwapEndian_b( val ) {
     return ( ( ( val & 0xff00 ) >> 8 ) | ( ( val & 0x00ff ) << 8 ) );
@@ -330,6 +361,7 @@ function btSwapEndian_b( val ) {
 /**
  * @param {number} val
  * @return {number}
+ * @export
  */
 function btSwapEndian_c( val ) {
     return btSwapEndian_a( val );
@@ -338,6 +370,7 @@ function btSwapEndian_c( val ) {
 /**
  * @param {number} val
  * @return {number}
+ * @export
  */
 function btSwapEndian_d( val ) {
     return btSwapEndian_b( val );
@@ -353,6 +386,7 @@ function btSwapEndian_d( val ) {
 /**
  * @param {number} d
  * @return {number}
+ * @export
  */
 function btSwapEndianFloat( d ) {
     var src = new Float32Array( 1 );
@@ -374,6 +408,7 @@ function btSwapEndianFloat( d ) {
 /**
  * @param {number} a
  * @return {number}
+ * @export
  */
 function btUnswapEndianFloat( a ) {
     var src = new Int32Array( 1 );
@@ -395,6 +430,7 @@ function btUnswapEndianFloat( a ) {
 // swap using char pointers
 /**
  * @deprecated
+ * @export
  */
 function btSwapEndianDouble() {
     /*
@@ -415,8 +451,9 @@ function btSwapEndianDouble() {
 
 // unswap using char pointers
 /**
-	@deprecated
-*/
+ * @deprecated
+ * @export
+ */
 function btUnswapEndianDouble() {
     /*
     double d = 0.0;
@@ -438,6 +475,7 @@ function btUnswapEndianDouble() {
  * Returns normalized value in range [-SIMD_PI, SIMD_PI]
  * @param {btScalar} angleInRadians
  * @return {btScalar}
+ * @export
  */
 function btNormalizeAngle( angleInRadians ) {
     angleInRadians = btFmod( angleInRadians, SIMD_2_PI );
@@ -456,14 +494,30 @@ function btNormalizeAngle( angleInRadians ) {
  * Rudimentary class to provide type info
  * @param {number} objectType
  * @constructor
+ * @export
  */
 function btTypedObject( objectType ) {
     this.m_objectType = objectType;
 }
 
+/** 
+ * @export
+ */
 btTypedObject.prototype = {
     constructor: btTypedObject,
+    /**
+     * @return {number}
+     */
     getObjectType: function() {
         return this.m_objectType;
     }
 };
+
+/**
+ * Reciprocal square root 
+ * @param {btScalar} x
+ * @return {btScalar}
+ */
+function btRecipSqrt( x ) {
+    return 1 / btSqrt( x );
+}
